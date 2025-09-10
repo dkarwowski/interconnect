@@ -1374,8 +1374,8 @@
               "$ref": "#/components/schemas/ProviderToLocation"
             }
           },
-          "apiUrlPrefix": {
-            "description": "API endpoint for communicating with the parent provider about this\nenvironment resource and all child resources.  This is generally a URL and\nany provider specific prefixes needed to communicate with the correct\nregional service.\n\nExample:\nremoteprovider.com/v1/projects/123/locations/us-east4/",
+          "apiUri": {
+            "description": "API endpoint for communicating with the parent provider about this\nenvironment resource and all child resources.\n\nExample:\nremoteprovider.com/v1/projects/123/locations/us-east4/",
             "type": "string"
           },
           "supportedConnectionSizeMbps": {
