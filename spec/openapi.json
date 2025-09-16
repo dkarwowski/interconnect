@@ -1355,12 +1355,12 @@
             "description": "Identifier. Unique identifier for an Environment resource.",
             "type": "string"
           },
-          "providerToLocation": {
-            "description": "Output only. A unique mapping between a provider and a location code.  This field should\nnever contain more than 2 resources.  One resource should be a mapping\nbetween the server's provider ID and a location identifier, the second\nshould be the parent provider id and a location identifier.\n\nExample: [\n           {\"providerId\": \"1\", \"location\": \"us-east4\"},\n           {\"providerId\": \"2\", \"location\": \"us-east1\"},\n         ]",
+          "providerSites": {
+            "description": "Output only. A unique mapping between a provider and a site code.  This field should\nnever contain more than 2 entries.  One entry should be a mapping\nbetween the server's provider ID and a site identifier, the other entry\nshould be the parent provider ID and a site identifier.\n\nExample: [\n           {\"providerId\": \"provider1\", \"site\": \"us-east4\"},\n           {\"providerId\": \"provider2\", \"site\": \"us-east1\"},\n         ]",
             "readOnly": true,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ProviderToLocation"
+              "$ref": "#/components/schemas/ProviderSites"
             }
           },
           "apiUri": {
@@ -1386,20 +1386,20 @@
           }
         }
       },
-      "ProviderToLocation": {
-        "description": "A mapping of a provider id to their API and display names for locations.",
+      "ProviderSites": {
+        "description": "A mapping of a provider id to their API and display names for sites.",
         "type": "object",
         "properties": {
           "providerId": {
-            "description": "Which provider this location data is associated with.",
+            "description": "Which provider this site data is associated with.",
             "type": "string"
           },
-          "location": {
-            "description": "A provider specific location name (Example: us-east4)",
+          "site": {
+            "description": "A provider specific site name (e.g. us-east4).",
             "type": "string"
           },
           "displayName": {
-            "description": "A display name for the location for use in customer facing UI.",
+            "description": "A display name for the site for use in customer facing UI.",
             "type": "string"
           }
         }
