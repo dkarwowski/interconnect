@@ -1456,7 +1456,8 @@
         "properties": {
           "version": {
             "description": "Required. Version of the ActivationKey itself. The version should\nmatch the API version on the creating service.",
-            "type": "int"
+            "type": "integer",
+            "format": "int32"
           },
           "destinationEnvironmentUri": {
             "description": "Required. The destination environment URI this activation key is\nintended for use at.",
