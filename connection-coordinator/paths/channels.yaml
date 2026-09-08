@@ -3,34 +3,34 @@ AllChannels:
     description: List all channels associated with an interconnect.
     operationId: ListChannels
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - description: |-
-        The maximum number of channels to return. The service may return fewer
-        than this value.
-      explode: true
-      in: query
-      name: pageSize
-      required: false
-      schema:
-        format: int32
-        type: integer
-      style: form
-    - description: |-
-        A page token, received from a previous `ListChannels` call.
-        Provide this to retrieve the subsequent page.
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - description: |-
+          The maximum number of channels to return. The service may return fewer
+          than this value.
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: |-
+          A page token, received from a previous `ListChannels` call.
+          Provide this to retrieve the subsequent page.
 
-        When paginating, all other parameters provided to `ListChannels` must
-        match the call that provided the page token.
-      explode: true
-      in: query
-      name: pageToken
-      required: false
-      schema:
-        type: string
-      style: form
+          When paginating, all other parameters provided to `ListChannels` must
+          match the call that provided the page token.
+        explode: true
+        in: query
+        name: pageToken
+        required: false
+        schema:
+          type: string
+        style: form
     responses:
       default:
         content:
@@ -40,17 +40,17 @@ AllChannels:
         description: Successful operation
     security: []
     tags:
-    - Channels
+      - Channels
 OneChannel:
   get:
     description: Get details about a specific channel.
     operationId: GetChannel
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
     responses:
       default:
         content:
@@ -60,7 +60,7 @@ OneChannel:
         description: Successful operation
     security: []
     tags:
-    - Channels
+      - Channels
 NotifyMaintenance:
   post:
     description: |-
@@ -72,11 +72,11 @@ NotifyMaintenance:
       is consistent with the server provider.
     operationId: NotifyMaintenance
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
     requestBody:
       content:
         application/json:
@@ -92,17 +92,17 @@ NotifyMaintenance:
         description: Successful operation
     security: []
     tags:
-    - Channels
+      - Channels
 GetMaintenanceEvents:
   get:
     description: Get all maintenance events associated with a channel.
     operationId: GetMaintenanceEvents
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
     responses:
       default:
         content:
@@ -112,7 +112,7 @@ GetMaintenanceEvents:
         description: Successful operation
     security: []
     tags:
-    - Channels
+      - Channels
 RequestMacSecKeyRotation:
   post:
     description: |-
@@ -125,11 +125,11 @@ RequestMacSecKeyRotation:
       key on the partner side using the MACsec key management APIs.
     operationId: RequestMacSecKeyRotation
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
     requestBody:
       content:
         application/json:
@@ -145,4 +145,4 @@ RequestMacSecKeyRotation:
         description: Successful operation
     security: []
     tags:
-    - Channels
+      - Channels

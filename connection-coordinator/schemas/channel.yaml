@@ -54,8 +54,7 @@ Channel:
       readOnly: true
       type: integer
     channelMemberSizeGbps:
-      description: Output only. Individual channel member size in gigabits per
-        second.
+      description: Output only. Individual channel member size in gigabits per second.
       format: int32
       readOnly: true
       type: integer
@@ -75,33 +74,32 @@ Channel:
       type: string
     adminState:
       allOf:
-      - $ref: common.yaml#/AdminState
+        - $ref: common.yaml#/AdminState
       description: |-
         Output only. The administrative status of the channel.  This field is used by a provider
         to signal a channel has been intentionally disabled.
       readOnly: true
   type: object
-
 ListChannelsResponse:
   description: Response for obtaining multiple channel resources.
   example:
     channels:
-    - demarc: demarc
-      crossConnectManagerProvider: crossConnectManagerProvider
-      channelMemberSizeGbps: 6
-      name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
-      adminState: ""
-      macsecManagerProvider: macsecManagerProvider
-      aggregateChannelSizeGbps: 0
-      obfuscatedDeviceId: obfuscatedDeviceId
-    - demarc: demarc
-      crossConnectManagerProvider: crossConnectManagerProvider
-      channelMemberSizeGbps: 6
-      name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
-      adminState: ""
-      macsecManagerProvider: macsecManagerProvider
-      aggregateChannelSizeGbps: 0
-      obfuscatedDeviceId: obfuscatedDeviceId
+      - demarc: demarc
+        crossConnectManagerProvider: crossConnectManagerProvider
+        channelMemberSizeGbps: 6
+        name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
+        adminState: ""
+        macsecManagerProvider: macsecManagerProvider
+        aggregateChannelSizeGbps: 0
+        obfuscatedDeviceId: obfuscatedDeviceId
+      - demarc: demarc
+        crossConnectManagerProvider: crossConnectManagerProvider
+        channelMemberSizeGbps: 6
+        name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
+        adminState: ""
+        macsecManagerProvider: macsecManagerProvider
+        aggregateChannelSizeGbps: 0
+        obfuscatedDeviceId: obfuscatedDeviceId
     nextPageToken: nextPageToken
   properties:
     channels:
@@ -115,7 +113,6 @@ ListChannelsResponse:
         If this field is omitted, there are no subsequent pages.
       type: string
   type: object
-
 NotifyMaintenanceRequest:
   description: |-
     A notification from a remote provider that a maintenance has been updated on
@@ -130,18 +127,15 @@ NotifyMaintenanceRequest:
         $ref: "#/MaintenanceEvent"
       type: array
   type: object
-  
 MaintenanceEvent:
-  description: A maintenance event scheduled or in progress associated with a
-    channel.
+  description: A maintenance event scheduled or in progress associated with a channel.
   example:
     maintenanceId: maintenanceId
     startTime: 2000-01-23T04:56:07.000+00:00
     endTime: 2000-01-23T04:56:07.000+00:00
   properties:
     startTime:
-      description: The timestamp when a maintenance will start or started in the
-        past.
+      description: The timestamp when a maintenance will start or started in the past.
       format: date-time
       type: string
     endTime:
@@ -154,17 +148,16 @@ MaintenanceEvent:
         a provider to uniquely identify the maintenance event.
       type: string
   type: object
-
 GetMaintenanceEventsResponse:
   description: Response for getting maintenance events for a channel.
   example:
     events:
-    - maintenanceId: maintenanceId
-      startTime: 2000-01-23T04:56:07.000+00:00
-      endTime: 2000-01-23T04:56:07.000+00:00
-    - maintenanceId: maintenanceId
-      startTime: 2000-01-23T04:56:07.000+00:00
-      endTime: 2000-01-23T04:56:07.000+00:00
+      - maintenanceId: maintenanceId
+        startTime: 2000-01-23T04:56:07.000+00:00
+        endTime: 2000-01-23T04:56:07.000+00:00
+      - maintenanceId: maintenanceId
+        startTime: 2000-01-23T04:56:07.000+00:00
+        endTime: 2000-01-23T04:56:07.000+00:00
   properties:
     events:
       description: The maintenance events for the specified channel.
@@ -172,7 +165,6 @@ GetMaintenanceEventsResponse:
         $ref: "#/MaintenanceEvent"
       type: array
   type: object
-
 MacSecKeyRotationRequest:
   description: |-
     A request from the non-owner provider to the channel owner to

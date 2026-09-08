@@ -1,8 +1,8 @@
 MacSecKey:
   description: |-
     MacSecKey resources contain the necessary details to setup MACsec keys
-    on the Channel object. 
-    
+    on the Channel object.
+
     A Channel is limited to 2 MacSecKey objects at any one time, and amongst
     the `N` Channels on the respective parent Interconnect, the limit is `N+1`
 
@@ -41,7 +41,6 @@ MacSecKey:
       type: boolean
       readOnly: true
   type: object
-
 ListMacSecKeysResponse:
   description: Response for obtaining multiple MacSecKey resources
   properties:

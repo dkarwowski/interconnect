@@ -46,15 +46,14 @@ Provider:
         Example: Amazon Web Services, Google Cloud Platform, Microsoft Azure, etc
       type: string
   type: object
-
 ListProvidersResponse:
   description: Response for obtaining multiple provider resources.
   example:
     providers:
-    - displayName: displayName
-      name: providers/my-provider
-    - displayName: displayName
-      name: providers/my-provider
+      - displayName: displayName
+        name: providers/my-provider
+      - displayName: displayName
+        name: providers/my-provider
     nextPageToken: nextPageToken
   properties:
     providers:

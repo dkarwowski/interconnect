@@ -45,12 +45,12 @@ Connection:
       type: integer
     adminState:
       allOf:
-      - $ref: common.yaml#/AdminState
+        - $ref: common.yaml#/AdminState
       description: Output only. The administrative status of the connection resource.
       readOnly: true
     verificationState:
       allOf:
-      - $ref: common.yaml#/VerificationState
+        - $ref: common.yaml#/VerificationState
       description: Output only. The verification state of the connection resource.
       readOnly: true
     deferProvisioning:
@@ -64,11 +64,10 @@ Connection:
       description: |-
         The source that should be consulted/confirmed as part of the creation request.
       oneOf:
-      - $ref: "#/EncodedKey"
-      - $ref: "#/SourceConnectionName"
+        - $ref: "#/EncodedKey"
+        - $ref: "#/SourceConnectionName"
       type: object
   type: object
-  
 FeatureGuidance:
   description: |-
     FeatureGuidance contains a list of preferences and restrictions associated
@@ -84,7 +83,7 @@ FeatureGuidance:
   properties:
     featureType:
       allOf:
-      - $ref: "feature.yaml#/FeatureType"
+        - $ref: "feature.yaml#/FeatureType"
       description: The feature type associated with this guidance.
     channel:
       description: |-
@@ -94,15 +93,14 @@ FeatureGuidance:
       type: string
     channelAdminState:
       allOf:
-      - $ref: common.yaml#/AdminState
+        - $ref: common.yaml#/AdminState
       description: Output only. The administrative status of the channel resource.
       readOnly: true
     l3BaseGuidance:
       allOf:
-      - $ref: "#/L3BaseGuidance"
+        - $ref: "#/L3BaseGuidance"
       description: All configuration guidance associated with a FEATURE_TYPE_L3_BASE.
   type: object
-
 L3BaseGuidance:
   description: All guidance associated with the FEATURE_TYPE_L3_BASE.
   properties:
@@ -132,8 +130,7 @@ L3BaseGuidance:
         $ref: "#/SubnetGuidance"
       type: array
     ipv6SubnetGuidance:
-      description: A list of non-overlapping IPv6 subnets a provider can select
-        from.
+      description: A list of non-overlapping IPv6 subnets a provider can select from.
       items:
         $ref: "#/SubnetGuidance"
       type: array
@@ -199,7 +196,6 @@ L3BaseGuidance:
       format: int32
       type: integer
   type: object
-
 ASNRange:
   description: A range of acceptable ASNs.
   properties:
@@ -216,7 +212,6 @@ ASNRange:
       minimum: 0
       maximum: 4294967295
   type: object
-
 SubnetGuidance:
   description: |-
     Guidance for the usable subnets by a provider when provisioning.
@@ -238,7 +233,6 @@ SubnetGuidance:
       description: A subnet preferred by the server when creating a new feature
       type: string
   type: object
-
 VLANRange:
   description: |-
     A range of VLAN IDs that a provider may select from.
@@ -256,7 +250,6 @@ VLANRange:
       format: int32
       type: integer
   type: object
-
 MTURange:
   description: |-
     A range of MTUs that a provider may select from.
@@ -273,22 +266,21 @@ MTURange:
       format: int32
       type: integer
   type: object
-
 ListConnectionsResponse:
   description: Response for obtaining multiple connection resources.
   example:
     nextPageToken: nextPageToken
     connections:
-    - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection
-      adminState: ""
-      activationKey: activationKey
-      verificationState: ""
-      bandwidthMbps: 0
-    - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection
-      adminState: ""
-      activationKey: activationKey
-      verificationState: ""
-      bandwidthMbps: 0
+      - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection
+        adminState: ""
+        activationKey: activationKey
+        verificationState: ""
+        bandwidthMbps: 0
+      - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection
+        adminState: ""
+        activationKey: activationKey
+        verificationState: ""
+        bandwidthMbps: 0
   properties:
     connections:
       description: The connections from the specified provider.
@@ -312,14 +304,14 @@ GenerateFeatureGuidanceResponse:
     associated with a connection.
   example:
     featureGuidance:
-    - l3BaseGuidance: ""
-      featureType: ""
-      channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
-      channelAdminState: ""
-    - l3BaseGuidance: ""
-      featureType: ""
-      channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
-      channelAdminState: ""
+      - l3BaseGuidance: ""
+        featureType: ""
+        channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
+        channelAdminState: ""
+      - l3BaseGuidance: ""
+        featureType: ""
+        channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
+        channelAdminState: ""
   properties:
     featureGuidance:
       description: |-
@@ -331,13 +323,11 @@ GenerateFeatureGuidanceResponse:
         $ref: "#/FeatureGuidance"
       type: array
   type: object
-
 NotifyConnectionStatusRequest:
   description: |-
     A notification from a remote provider that a connection's status has been
     updated.
   type: object
-
 EncodedKey:
   description: |-
     Base64 Encoded ActivationKey
@@ -346,7 +336,6 @@ EncodedKey:
     encodedKey:
       type: string
   type: object
-
 SourceConnectionName:
   description: |-
     The name of the source connection.

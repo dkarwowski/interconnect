@@ -1,54 +1,53 @@
 State:
   enum:
-  - STATE_UNSPECIFIED
-  - STATE_OPEN
-  - STATE_IN_PROGRESS
-  - STATE_ACTION_REQUIRED
-  - STATE_CLOSED
+    - STATE_UNSPECIFIED
+    - STATE_OPEN
+    - STATE_IN_PROGRESS
+    - STATE_ACTION_REQUIRED
+    - STATE_CLOSED
   type: string
   x-google-enum-descriptions:
-  - Unspecified state.
-  - The issue is pending triage.
-  - The issue is being actively worked on.
-  - The issue requires action from the requesting provider.
-  - The issue has been resolved.
+    - Unspecified state.
+    - The issue is pending triage.
+    - The issue is being actively worked on.
+    - The issue requires action from the requesting provider.
+    - The issue has been resolved.
 Priority:
   enum:
-  - PRIORITY_UNSPECIFIED
-  - PRIORITY_P0
-  - PRIORITY_P1
-  - PRIORITY_P2
-  - PRIORITY_P3
-  - PRIORITY_P4
+    - PRIORITY_UNSPECIFIED
+    - PRIORITY_P0
+    - PRIORITY_P1
+    - PRIORITY_P2
+    - PRIORITY_P3
+    - PRIORITY_P4
   type: string
   x-google-enum-descriptions:
-  - Unspecified priority.
-  - Highest priority.
-  - High priority.
-  - Medium priority.
-  - Low priority.
-  - Lowest priority.
+    - Unspecified priority.
+    - Highest priority.
+    - High priority.
+    - Medium priority.
+    - Low priority.
+    - Lowest priority.
 IssueContext:
   enum:
-  - ISSUE_CONTEXT_UNSPECIFIED
-  - ISSUE_CONTEXT_CONNECTION_ISSUE
-  - ISSUE_CONTEXT_INTERCONNECT_ISSUE
+    - ISSUE_CONTEXT_UNSPECIFIED
+    - ISSUE_CONTEXT_CONNECTION_ISSUE
+    - ISSUE_CONTEXT_INTERCONNECT_ISSUE
   type: string
   x-google-enum-descriptions:
-  - 'Unspecified context, when set the caller may create an issue with arbitrary
+    - 'Unspecified context, when set the caller may create an issue with arbitrary
 
-    content and set context as needed.'
-  - 'The issue is related to a connection issue.
-
-
-    The following context is required: ConnectionContext'
-  - 'The issue is related to an interconnect issue.
+      content and set context as needed.'
+    - 'The issue is related to a connection issue.
 
 
-    The following context is required: InterconnectContext'
+      The following context is required: ConnectionContext'
+    - 'The issue is related to an interconnect issue.
+
+
+      The following context is required: InterconnectContext'
 ChannelContext:
-  description: A channel experiencing an issue and any relevant context associated
-    with it.
+  description: A channel experiencing an issue and any relevant context associated with it.
   properties:
     name:
       description: |-
@@ -57,12 +56,10 @@ ChannelContext:
         Format: providers/{provider}/environments/{environment}/interconnects/{interconnect}/channels/{channel}
       type: string
   required:
-  - name
+    - name
   type: object
-
 ConnectionContext:
-  description: 'A connection experiencing an issue and any relevant context associated
-    with
+  description: 'A connection experiencing an issue and any relevant context associated with
 
     it.'
   properties:
@@ -73,11 +70,10 @@ ConnectionContext:
         Format: providers/{provider}/environments/{environment}/interconnects/{interconnect}/connections/{connection}
       type: string
   required:
-  - name
+    - name
   type: object
 FeatureContext:
-  description: A feature experiencing an issue and any relevant context associated
-    with it.
+  description: A feature experiencing an issue and any relevant context associated with it.
   properties:
     name:
       description: |-
@@ -86,11 +82,10 @@ FeatureContext:
         Format: providers/{provider}/environments/{environment}/interconnects/{interconnect}/connections/{connection}/features/{feature}
       type: string
   required:
-  - name
+    - name
   type: object
 InterconnectContext:
-  description: 'An interconnect experiencing an issue and any relevant context
-    associated
+  description: 'An interconnect experiencing an issue and any relevant context associated
 
     with it.'
   properties:
@@ -101,11 +96,10 @@ InterconnectContext:
         Format: providers/{provider}/environments/{environment}/interconnects/{interconnect}
       type: string
   required:
-  - name
+    - name
   type: object
 Issue:
-  description: 'An issue as expressed by a remote provider related to shared resources
-    with
+  description: 'An issue as expressed by a remote provider related to shared resources with
 
     the local provider.
 
@@ -114,8 +108,7 @@ Issue:
 
     included to allow callers to provide explicit resources associated with the
 
-    issue.  These resources may have additional metadata associated with them
-    to
+    issue.  These resources may have additional metadata associated with them to
 
     further describe the issue.
 
@@ -132,14 +125,12 @@ Issue:
       description: Required. Issue body.  Core content of the issue.
       type: string
     channelContexts:
-      description: Optional. Context associated with channels implicated by this
-        issue.
+      description: Optional. Context associated with channels implicated by this issue.
       items:
         $ref: '../schemas/issues.yaml#/ChannelContext'
       type: array
     connectionContexts:
-      description: Optional. Context associated with connections implicated by
-        this issue.
+      description: Optional. Context associated with connections implicated by this issue.
       items:
         $ref: '../schemas/issues.yaml#/ConnectionContext'
       type: array
@@ -149,27 +140,23 @@ Issue:
       readOnly: true
       type: string
     featureContexts:
-      description: Optional. Context associated with features implicated by this
-        issue.
+      description: Optional. Context associated with features implicated by this issue.
       items:
         $ref: '../schemas/issues.yaml#/FeatureContext'
       type: array
     interconnectContexts:
-      description: Optional. Context associated with interconnects implicated
-        by this issue.
+      description: Optional. Context associated with interconnects implicated by this issue.
       items:
         $ref: '../schemas/issues.yaml#/InterconnectContext'
       type: array
     issueContext:
       allOf:
-      - $ref: '../schemas/issues.yaml#/IssueContext'
-      description: 'Optional. The type of issue associated with resources defined
-        within the connection
+        - $ref: '../schemas/issues.yaml#/IssueContext'
+      description: 'Optional. The type of issue associated with resources defined within the connection
 
         coordinator.'
     localIssueId:
-      description: 'Output only. Opaque identifier for the local provider.  This
-        identifier allows you to
+      description: 'Output only. Opaque identifier for the local provider.  This identifier allows you to
 
         interact with the local providers official support API if desired.'
       readOnly: true
@@ -183,31 +170,29 @@ Issue:
       x-google-identifier: true
     priority:
       allOf:
-      - $ref: '../schemas/issues.yaml#/Priority'
+        - $ref: '../schemas/issues.yaml#/Priority'
       description: Optional. The priority of the issue.
     remoteContactEmail:
-      description: 'Optional. The email address to send all email communications
-        to in the remote
+      description: 'Optional. The email address to send all email communications to in the remote
 
         provider.'
       type: string
     remoteIssueId:
-      description: 'Optional. Opaque identifier for the remote provider.  This
-        identifier allows you to
+      description: 'Optional. Opaque identifier for the remote provider.  This identifier allows you to
 
         interact with the remote providers official support API if desired.'
       type: string
     state:
       allOf:
-      - $ref: '../schemas/issues.yaml#/State'
+        - $ref: '../schemas/issues.yaml#/State'
       description: Output only. The state of the issue.
       readOnly: true
     title:
       description: Required. Issue title.  A single line that summarizes the issue.
       type: string
   required:
-  - title
-  - body
+    - title
+    - body
   type: object
 Comment:
   description: 'A comment on a issue.
@@ -234,31 +219,30 @@ Comment:
       readOnly: true
       type: string
     localCommentId:
-      description: 'Output only. Opaque identifier for the local comment.  This
-        identifier allows the caller
+      description: 'Output only. Opaque identifier for the local comment.  This identifier allows the caller
 
         to interact with the local providers official support API if desired.'
       readOnly: true
       type: string
   required:
-  - body
+    - body
   type: object
 AddCommentRequest:
   description: Add a comment to an issue.
   properties:
     comment:
       allOf:
-      - $ref: '../schemas/issues.yaml#/Comment'
+        - $ref: '../schemas/issues.yaml#/Comment'
       description: Required. The comment to add.
   required:
-  - comment
+    - comment
   type: object
 AddCommentResponse:
   description: Results of adding a comment to an issue.
   properties:
     comment:
       allOf:
-      - $ref: '../schemas/issues.yaml#/Comment'
+        - $ref: '../schemas/issues.yaml#/Comment'
       description: The comment that was added.
   type: object
 CloseIssueRequest:
@@ -268,8 +252,7 @@ CloseIssueResponse:
   description: Results of closing an issue.
   type: object
 ListCommentsResponse:
-  description: 'List issue comments response body. By default, comments are sorted
-    by create_time in descending order.'
+  description: 'List issue comments response body. By default, comments are sorted by create_time in descending order.'
   properties:
     comments:
       description: The list of Comments
@@ -277,8 +260,7 @@ ListCommentsResponse:
         $ref: '../schemas/issues.yaml#/Comment'
       type: array
     nextPageToken:
-      description: 'A token that can be sent as `page_token` to retrieve the next
-        page.
+      description: 'A token that can be sent as `page_token` to retrieve the next page.
 
         If this field is omitted, there are no subsequent pages.'
       type: string
@@ -292,8 +274,7 @@ ListIssuesResponse:
         $ref: '../schemas/issues.yaml#/Issue'
       type: array
     nextPageToken:
-      description: 'A token that can be sent as `page_token` to retrieve the next
-        page.
+      description: 'A token that can be sent as `page_token` to retrieve the next page.
 
         If this field is omitted, there are no subsequent pages.'
       type: string

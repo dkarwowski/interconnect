@@ -3,32 +3,31 @@ AllMacSecKeys:
     description: Create a new MACsec key on the channel
     operationId: CreateMacSecKey
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
-    - description: |-
-        Required. The ID to use for the macSecKey, which will become the final component of
-        the connection's resource name.
-      explode: false
-      in: query
-      name: macSecKeyId
-      required: true
-      schema:
-        type: string
-      style: form
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - description: |-
+          Required. The ID to use for the macSecKey, which will become the final component of
+          the connection's resource name.
+        explode: false
+        in: query
+        name: macSecKeyId
+        required: true
+        schema:
+          type: string
+        style: form
     requestBody:
       content:
         application/json:
           example:
             name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel/macSecKeys/my-macSecKey
             cak: MACsec CAK
-            ckn: MACsec CKN 
+            ckn: MACsec CKN
           schema:
             $ref: "../schemas/macseckey.yaml#/MacSecKey"
       description: The request body.
-      
     responses:
       default:
         content:
@@ -38,58 +37,57 @@ AllMacSecKeys:
         description: Successful operation
     security: []
     tags:
-    - MacSecKey
+      - MacSecKey
   get:
     description: List all the MACsec keys associated with the channel
     operationId: ListMacSecKeys
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
     responses:
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: "../schemas/macseckey.yaml#/ListMacSecKeysResponse"
-          description: Successful operation
+      default:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/macseckey.yaml#/ListMacSecKeysResponse"
+        description: Successful operation
     security: []
     tags:
-    - MacSecKey
-
+      - MacSecKey
 OneMacSecKey:
   get:
     description: Get the specific MACsec key associated with the channel
     operationId: GetMacSecKey
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
-    - $ref: "../parameters/_index.yaml#/parameters/macSecKey"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/macSecKey"
     responses:
-        default:
-          content:
-            application/json:
-              schema:
-                $ref: "../schemas/macseckey.yaml#/MacSecKey"
-          description: Successful operation
+      default:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/macseckey.yaml#/MacSecKey"
+        description: Successful operation
     security: []
     tags:
-    - MacSecKey
+      - MacSecKey
   delete:
     description: Delete the specific MACsec key associated with the channel
     operationId: DeleteMacSecKey
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
-    - $ref: "../parameters/_index.yaml#/parameters/interconnect"
-    - $ref: "../parameters/_index.yaml#/parameters/channel"
-    - $ref: "../parameters/_index.yaml#/parameters/macSecKey"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/interconnect"
+      - $ref: "../parameters/_index.yaml#/parameters/channel"
+      - $ref: "../parameters/_index.yaml#/parameters/macSecKey"
     responses:
       default:
         content:
@@ -99,5 +97,4 @@ OneMacSecKey:
         description: Successful operation
     security: []
     tags:
-    - MacSecKey
-
+      - MacSecKey

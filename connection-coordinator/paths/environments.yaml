@@ -3,32 +3,32 @@ AllEnvironments:
     description: List all environments associated with a CSP.
     operationId: ListEnvironments
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - description: |-
-        The maximum number of environments to return. The service may return fewer
-        than this value.
-      explode: true
-      in: query
-      name: pageSize
-      required: false
-      schema:
-        format: int32
-        type: integer
-      style: form
-    - description: |-
-        A page token, received from a previous `ListEnvironments` call.
-        Provide this to retrieve the subsequent page.
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - description: |-
+          The maximum number of environments to return. The service may return fewer
+          than this value.
+        explode: true
+        in: query
+        name: pageSize
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: |-
+          A page token, received from a previous `ListEnvironments` call.
+          Provide this to retrieve the subsequent page.
 
-        When paginating, all other parameters provided to `ListEnvironments` must
-        match the call that provided the page token.
-      explode: true
-      in: query
-      name: pageToken
-      required: false
-      schema:
-        type: string
-      style: form
+          When paginating, all other parameters provided to `ListEnvironments` must
+          match the call that provided the page token.
+        explode: true
+        in: query
+        name: pageToken
+        required: false
+        schema:
+          type: string
+        style: form
     responses:
       default:
         content:
@@ -38,15 +38,15 @@ AllEnvironments:
         description: Successful operation
     security: []
     tags:
-    - Environments
+      - Environments
 OneEnvironment:
   get:
     description: Get details about a specific environment.
     operationId: GetEnvironment
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
     responses:
       default:
         content:
@@ -56,7 +56,7 @@ OneEnvironment:
         description: Successful operation
     security: []
     tags:
-    - Environments
+      - Environments
 ConfirmActivationKey:
   post:
     description: |-
@@ -68,9 +68,9 @@ ConfirmActivationKey:
               response.
     operationId: ConfirmActivationKey
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
-    - $ref: "../parameters/_index.yaml#/parameters/environment"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/environment"
     requestBody:
       content:
         application/json:
@@ -86,4 +86,4 @@ ConfirmActivationKey:
         description: Successful operation
     security: []
     tags:
-    - Environments
+      - Environments

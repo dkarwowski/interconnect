@@ -4,7 +4,7 @@ info:
   title: Connection Coordinator API Specification
   version: v1
 servers:
-- url: /
+  - url: /
 paths:
   /providers:
     $ref: paths/providers.yaml#/AllProviders
@@ -31,7 +31,7 @@ paths:
   /providers/{provider}/environments/{environment}/interconnects/{interconnect}/channels/{channel}/maintenanceEvents:
     $ref: paths/channels.yaml#/GetMaintenanceEvents
   /providers/{provider}/environments/{environment}/interconnects/{interconnect}/channels/{channel}/macSecKeys:
-    $ref: paths/macseckeys.yaml#/AllMacSecKeys  
+    $ref: paths/macseckeys.yaml#/AllMacSecKeys
   /providers/{provider}/environments/{environment}/interconnects/{interconnect}/channels/{channel}/macSecKeys/{macSecKey}:
     $ref: paths/macseckeys.yaml#/OneMacSecKey
   /providers/{provider}/environments/{environment}/interconnects/{interconnect}/connections:
@@ -99,4 +99,3 @@ components:
       $ref: parameters/_index.yaml#/parameters/prettyPrint
     _.xgafv:
       $ref: parameters/_index.yaml#/parameters/_.xgafv
-

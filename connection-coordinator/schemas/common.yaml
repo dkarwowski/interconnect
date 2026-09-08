@@ -4,20 +4,18 @@ AdminState:
     ADMIN_STATE_ENABLED - A provider has administratively enabled a resource.
     ADMIN_STATE_DISABLED - A provider has administratively disabled a resource.
   enum:
-  - ADMIN_STATE_ENABLED
-  - ADMIN_STATE_DISABLED
+    - ADMIN_STATE_ENABLED
+    - ADMIN_STATE_DISABLED
   type: string
-
 VerificationState:
   description: |-
     Enum that describes the verification state of a resource.
     VERIFICATION_STATE_UNVERIFIED - Verification is pending and not ready for production traffic.
     VERIFICATION_STATE_VERIFIED - Verification is complete and ready for production traffic.
   enum:
-  - VERIFICATION_STATE_UNVERIFIED
-  - VERIFICATION_STATE_VERIFIED
+    - VERIFICATION_STATE_UNVERIFIED
+    - VERIFICATION_STATE_VERIFIED
   type: string
-
 ProvisioningState:
   description: |-
     Enum that describes the provisioning state of a resource.
@@ -29,10 +27,9 @@ ProvisioningState:
       2. Customer may send production traffic between providers using the
           feature.
   enum:
-  - PROVISIONING_STATE_PENDING
-  - PROVISIONING_STATE_FINAL
+    - PROVISIONING_STATE_PENDING
+    - PROVISIONING_STATE_FINAL
   type: string
-
 Empty:
   description: |-
     A generic empty message that you can re-use to avoid defining duplicated

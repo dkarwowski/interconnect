@@ -28,31 +28,29 @@ Feature:
       type: string
     featureConfig:
       allOf:
-      - $ref: "#/FeatureConfig"
+        - $ref: "#/FeatureConfig"
       description: All configuration associated with the feature.
     provisioningState:
       allOf:
-      - $ref: "common.yaml#/ProvisioningState"
+        - $ref: "common.yaml#/ProvisioningState"
       description: Output only. The provisioning state of the feature.
       readOnly: true
   type: object
-
 FeatureType:
-  description: FEATURE_TYPE_L3_BASE - Primary feature used to connect Layer 3
-    traffic.
+  description: FEATURE_TYPE_L3_BASE - Primary feature used to connect Layer 3 traffic.
   enum:
-  - FEATURE_TYPE_L3_BASE
+    - FEATURE_TYPE_L3_BASE
   type: string
 FeatureConfig:
   description: Feature specific configuration associated with a Feature resource.
   properties:
     featureType:
       allOf:
-      - $ref: "#/FeatureType"
+        - $ref: "#/FeatureType"
       description: The feature type this configuration contains.
     l3BaseConfig:
       allOf:
-      - $ref: "#/L3BaseConfig"
+        - $ref: "#/L3BaseConfig"
       description: All configuration associated with the FEATURE_TYPE_L3_BASE
   required:
     - featureType
@@ -141,19 +139,18 @@ ProviderBgpConfig:
     - asn
     - provider
   type: object
-
 ListFeaturesResponse:
   description: Response for obtaining multiple feature resources.
   example:
     features:
-    - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection/features/my-feature
-      channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
-      featureConfig: ""
-      provisioningState: ""
-    - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection/features/my-feature
-      channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
-      featureConfig: ""
-      provisioningState: ""
+      - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection/features/my-feature
+        channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
+        featureConfig: ""
+        provisioningState: ""
+      - name: providers/my-provider/environments/my-environment/interconnects/my-interconnect/connections/my-connection/features/my-feature
+        channel: providers/my-provider/environments/my-environment/interconnects/my-interconnect/channels/my-channel
+        featureConfig: ""
+        provisioningState: ""
     nextPageToken: nextPageToken
   properties:
     features:
@@ -167,4 +164,3 @@ ListFeaturesResponse:
         If this field is omitted, there are no subsequent pages.
       type: string
   type: object
-

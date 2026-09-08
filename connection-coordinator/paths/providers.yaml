@@ -3,7 +3,7 @@ AllProviders:
     description: Get details on a specific provider managed by this server.
     operationId: ListProviders
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
     responses:
       default:
         content:
@@ -13,14 +13,14 @@ AllProviders:
         description: Successful operation
     security: []
     tags:
-    - Providers
+      - Providers
 OneProvider:
   get:
     description: Get details on a specific provider managed by this server.
     operationId: GetProvider
     parameters:
-    - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
-    - $ref: "../parameters/_index.yaml#/parameters/provider"
+      - $ref: "../parameters/_index.yaml#/parameters/x-request-id"
+      - $ref: "../parameters/_index.yaml#/parameters/provider"
     responses:
       default:
         content:
@@ -30,4 +30,4 @@ OneProvider:
         description: Successful operation
     security: []
     tags:
-    - Providers
+      - Providers

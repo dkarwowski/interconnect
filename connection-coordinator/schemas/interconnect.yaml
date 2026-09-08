@@ -11,13 +11,13 @@ Interconnect:
     All other fields are controlled by the server provider.
   example:
     supportedFeatures:
-    - FEATURE_TYPE_L3_BASE
-    - FEATURE_TYPE_L3_BASE
+      - FEATURE_TYPE_L3_BASE
+      - FEATURE_TYPE_L3_BASE
     name: providers/my-provider/environments/my-environment/interconnects/my-interconnect
     state: ""
     supportedConnectionSizeMbps:
-    - 0
-    - 0
+      - 0
+      - 0
     maxBandwidthMbps: 6
   properties:
     name:
@@ -49,7 +49,7 @@ Interconnect:
       type: array
     state:
       allOf:
-      - $ref: "#/InterconnectState"
+        - $ref: "#/InterconnectState"
       description: |-
         Output only. The operational state of the interconnect used to control connection
         provisioning.
@@ -75,33 +75,32 @@ InterconnectState:
     INTERCONNECT_STATE_ACTIVE - Provisioning is complete and ready for production traffic.
     INTERCONNECT_STATE_CLOSED - Functional for current customers but closed to new connections.
   enum:
-  - INTERCONNECT_STATE_PENDING
-  - INTERCONNECT_STATE_ACTIVE
-  - INTERCONNECT_STATE_CLOSED
+    - INTERCONNECT_STATE_PENDING
+    - INTERCONNECT_STATE_ACTIVE
+    - INTERCONNECT_STATE_CLOSED
   type: string
-
 ListInterconnectsResponse:
   description: Response for obtaining multiple interconnect resources.
   example:
     interconnects:
-    - supportedFeatures:
-      - FEATURE_TYPE_L3_BASE
-      - FEATURE_TYPE_L3_BASE
-      name: providers/my-provider/environments/my-environment/interconnects/my-interconnect
-      state: ""
-      supportedConnectionSizeMbps:
-      - 0
-      - 0
-      maxBandwidthMbps: 6
-    - supportedFeatures:
-      - FEATURE_TYPE_L3_BASE
-      - FEATURE_TYPE_L3_BASE
-      name: providers/my-provider/environments/my-environment/interconnects/my-interconnect
-      state: ""
-      supportedConnectionSizeMbps:
-      - 0
-      - 0
-      maxBandwidthMbps: 6
+      - supportedFeatures:
+          - FEATURE_TYPE_L3_BASE
+          - FEATURE_TYPE_L3_BASE
+        name: providers/my-provider/environments/my-environment/interconnects/my-interconnect
+        state: ""
+        supportedConnectionSizeMbps:
+          - 0
+          - 0
+        maxBandwidthMbps: 6
+      - supportedFeatures:
+          - FEATURE_TYPE_L3_BASE
+          - FEATURE_TYPE_L3_BASE
+        name: providers/my-provider/environments/my-environment/interconnects/my-interconnect
+        state: ""
+        supportedConnectionSizeMbps:
+          - 0
+          - 0
+        maxBandwidthMbps: 6
     nextPageToken: nextPageToken
   properties:
     interconnects:

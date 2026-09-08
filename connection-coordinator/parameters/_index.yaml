@@ -8,7 +8,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   environment:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -18,7 +17,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   interconnect:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -28,7 +26,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   channel:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -38,7 +35,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   connection:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -48,7 +44,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   feature:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -58,7 +53,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   macSecKey:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -68,7 +62,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   issue:
     description: Resource ID segment making up resource `id`.
     explode: false
@@ -78,7 +71,6 @@ parameters:
     schema:
       type: string
     style: simple
-
   x-request-id:
     description: |-
       Unique identifier for the request, used for tracing and idempotency.
@@ -89,7 +81,6 @@ parameters:
       type: string
       format: uuid
       example: 550e8400-e29b-41d4-a716-446655440000
-
   alt:
     description: Data format for response.
     explode: true
@@ -99,12 +90,11 @@ parameters:
     schema:
       default: json
       enum:
-      - json
-      - media
-      - proto
+        - json
+        - media
+        - proto
       type: string
     style: form
-
   callback:
     description: JSONP
     explode: true
@@ -114,7 +104,6 @@ parameters:
     schema:
       type: string
     style: form
-
   prettyPrint:
     description: Returns response with indentations and line breaks.
     explode: true
@@ -125,7 +114,6 @@ parameters:
       default: true
       type: boolean
     style: form
-
   _.xgafv:
     description: V1 error format.
     explode: true
@@ -134,7 +122,7 @@ parameters:
     required: false
     schema:
       enum:
-      - "1"
-      - "2"
+        - "1"
+        - "2"
       type: string
     style: form
